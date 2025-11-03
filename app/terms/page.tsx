@@ -16,14 +16,14 @@ const TermsPage = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Acceptance of Terms</h2>
             <p className="leading-relaxed">
-              Sringr WiFi Access ("the Service") is provided to passengers and visitors at this Airport under the guidance of the Airports Authority of India (AAI) to offer secure and seamless internet connectivity. By connecting to and using this Service, you agree to comply fully with these Terms and Conditions and the Privacy Policy outlined herein.
+              Srinagar WiFi Access ("the Service") is provided to passengers and visitors at this Airport under the guidance of the Airports Authority of India (AAI) to offer secure and seamless internet connectivity. By connecting to and using this Service, you agree to comply fully with these Terms and Conditions and the Privacy Policy outlined herein.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Acceptable Use Policy</h2>
             <p className="leading-relaxed mb-3">
-              You agree to use the Sringr WiFi network only for lawful purposes and in compliance with:
+              You agree to use the Srinagar WiFi network only for lawful purposes and in compliance with:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Indian laws and regulations</li>
@@ -79,7 +79,7 @@ const TermsPage = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Limitation of Liability</h2>
             <p className="leading-relaxed mb-3">
-              Sringr, AAI, or their service partners shall not be liable for any loss, damage, or data compromise resulting from:
+              Srinagar, AAI, or their service partners shall not be liable for any loss, damage, or data compromise resulting from:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Use of or inability to use the Service</li>
@@ -107,7 +107,7 @@ const TermsPage = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Network Monitoring and Modifications</h2>
             <p className="leading-relaxed mb-3">
-              Sringr and AAI reserve the right to:
+              Srinagar and AAI reserve the right to:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Monitor network activity for maintaining operational integrity</li>

@@ -16,7 +16,7 @@ const PrivacyPolicyPage = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Introduction</h2>
             <p className="leading-relaxed">
-              Sringr WiFi Access ("the Service") is provided to passengers and visitors at this Airport under the guidance of the Airports Authority of India (AAI) to offer secure and seamless internet connectivity. By connecting to and using this Service, you agree to comply fully with this Privacy Policy and the Terms and Conditions outlined herein.
+              Srinagar WiFi Access ("the Service") is provided to passengers and visitors at this Airport under the guidance of the Airports Authority of India (AAI) to offer secure and seamless internet connectivity. By connecting to and using this Service, you agree to comply fully with this Privacy Policy and the Terms and Conditions outlined herein.
             </p>
           </section>
 
