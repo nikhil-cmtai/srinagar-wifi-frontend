@@ -5,9 +5,9 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ className }) => (
-  <footer className={`bg-black text-white py-4 mt-8 ${className ? className : ''}`}>
+  <footer className={`bg-white text-black py-4 mt-8 ${className ? className : ''}`}>
     <div className="container mx-auto text-center">
-      <p className="text-sm">&copy; {new Date().getFullYear()} Airport Authority of India</p>
+      <p className="text-sm">&copy; {new Date().getFullYear()} Airports Authority of India - Srinagar Airport WiFi</p>
     </div>
   </footer>
 );
