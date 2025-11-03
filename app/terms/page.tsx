@@ -16,124 +16,150 @@ const TermsPage = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Acceptance of Terms</h2>
             <p className="leading-relaxed">
-              By accessing and using the public WiFi service at Srinagar Airport ("the Service"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use the Service.
+              Sringr WiFi Access ("the Service") is provided to passengers and visitors at this Airport under the guidance of the Airports Authority of India (AAI) to offer secure and seamless internet connectivity. By connecting to and using this Service, you agree to comply fully with these Terms and Conditions and the Privacy Policy outlined herein.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Service Description</h2>
-            <p className="leading-relaxed">
-              The Service provides complimentary wireless internet access to passengers and visitors at Srinagar Airport. The Service is provided on an "as is" and "as available" basis without any warranties.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Eligibility</h2>
-            <p className="leading-relaxed">
-              To use the Service, you must:
-            </p>
-            <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Have a valid Indian mobile number</li>
-              <li>Be at least 18 years of age or have parental consent</li>
-              <li>Provide accurate and complete information during registration</li>
-              <li>Comply with all applicable laws and regulations</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. User Responsibilities</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Acceptable Use Policy</h2>
             <p className="leading-relaxed mb-3">
-              You agree to use the Service only for lawful purposes and in accordance with these Terms. You agree NOT to:
+              You agree to use the Sringr WiFi network only for lawful purposes and in compliance with:
             </p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Transmit any malicious code, viruses, or harmful content</li>
-              <li>Engage in any activity that could disrupt or interfere with the Service</li>
-              <li>Attempt to gain unauthorized access to any systems or networks</li>
-              <li>Use the Service for any illegal activities or to transmit illegal content</li>
-              <li>Violate any applicable laws or regulations</li>
-              <li>Impersonate any person or entity</li>
-              <li>Collect or harvest information about other users</li>
+              <li>Indian laws and regulations</li>
+              <li>AAI guidelines and policies</li>
+              <li>Airport regulations</li>
+              <li>These Terms and Conditions</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">5. OTP Verification</h2>
-            <p className="leading-relaxed">
-              Access to the Service requires verification via One-Time Password (OTP) sent to your registered mobile number. You are responsible for keeping your mobile number secure and notifying us immediately of any unauthorized use.
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Prohibited Activities</h2>
+            <p className="leading-relaxed mb-3">
+              You must NOT engage in any of the following prohibited activities:
             </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Attempt to bypass network restrictions or security measures</li>
+              <li>Engage in hacking, unauthorized access, or network intrusion attempts</li>
+              <li>Transmit malware, viruses, or harmful code</li>
+              <li>Access, download, or share offensive, defamatory, or illegal content</li>
+              <li>Download or share copyrighted material without permission</li>
+              <li>Spread harmful code or engage in cyber-attacks</li>
+              <li>Conduct bulk data transfers that degrade service quality for other users</li>
+              <li>Use the network for any activities that violate applicable laws or regulations</li>
+            </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Service Limitations</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Consequences of Violation</h2>
             <p className="leading-relaxed">
-              We reserve the right to:
+              Any violation of these Terms may result in:
             </p>
             <ul className="list-disc pl-6 mt-2 space-y-2">
-              <li>Limit bandwidth usage and connection duration</li>
-              <li>Monitor network traffic for security purposes</li>
-              <li>Block or restrict access to certain websites or services</li>
-              <li>Suspend or terminate access for violations of these Terms</li>
-              <li>Modify or discontinue the Service at any time without notice</li>
+              <li>Immediate suspension of access</li>
+              <li>Permanent termination of access</li>
+              <li>Reporting to appropriate authorities including law enforcement agencies</li>
+              <li>Legal action as per applicable laws</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Privacy and Data Collection</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Service Warranties</h2>
             <p className="leading-relaxed">
-              Your use of the Service is subject to our Privacy Policy. By using the Service, you consent to the collection and use of your information as described in our Privacy Policy. Please review our{' '}
+              The Service is provided on an "as-is" and "as-available" basis without any warranties, express or implied, including but not limited to:
+            </p>
+            <ul className="list-disc pl-6 mt-2 space-y-2">
+              <li>Uninterrupted connectivity</li>
+              <li>Specific data speed or bandwidth</li>
+              <li>Fitness for a particular purpose</li>
+              <li>Error-free operation</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Limitation of Liability</h2>
+            <p className="leading-relaxed mb-3">
+              Sringr, AAI, or their service partners shall not be liable for any loss, damage, or data compromise resulting from:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Use of or inability to use the Service</li>
+              <li>Unauthorized access to your device or data</li>
+              <li>Network interruptions or connectivity issues</li>
+              <li>Security breaches or data compromises</li>
+              <li>Any third-party actions or content accessed through the Service</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">7. User Security Responsibilities</h2>
+            <p className="leading-relaxed mb-3">
+              Users are responsible for the security of their devices and are encouraged to:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Use personal firewalls and antivirus software</li>
+              <li>Avoid accessing sensitive financial or personal accounts over public WiFi</li>
+              <li>Keep their devices updated with latest security patches</li>
+              <li>Use secure connections (HTTPS) when possible</li>
+              <li>Not share personal credentials or sensitive information while using public WiFi</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Network Monitoring and Modifications</h2>
+            <p className="leading-relaxed mb-3">
+              Sringr and AAI reserve the right to:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Monitor network activity for maintaining operational integrity</li>
+              <li>Modify, suspend, or discontinue the Service at any time without prior notice</li>
+              <li>Block or restrict access to certain websites or services for security or policy compliance</li>
+              <li>Implement network management practices to ensure fair usage</li>
+            </ul>
+            <p className="leading-relaxed mt-3">
+              Continued use of the WiFi network constitutes acceptance of these Terms and any future revisions.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">9. Privacy and Data Collection</h2>
+            <p className="leading-relaxed">
+              Your use of the Service is subject to our{' '}
               <Link href="/privacy-policy" className="text-blue-600 hover:underline font-medium">
                 Privacy Policy
               </Link>
-              {' '}for more information.
+              {' '}. By using the Service, you consent to the collection and use of your information as described in our Privacy Policy. Please review our Privacy Policy for detailed information about data collection, usage, and protection.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Disclaimer of Warranties</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">10. Contact Information</h2>
+            <p className="leading-relaxed mb-3">
+              Users may contact the WiFi Administrator or Airport IT Department for:
+            </p>
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Clarifications regarding these Terms</li>
+              <li>Grievances or complaints</li>
+              <li>Requests related to service or data handling</li>
+              <li>Technical support</li>
+            </ul>
+            <div className="mt-3 p-4 bg-gray-50 rounded-lg">
+              <p className="font-medium text-gray-900 mb-1">Srinagar Airport</p>
+              <p className="text-sm text-gray-600">WiFi Administrator / Airport IT Department</p>
+              <p className="text-sm text-gray-600 mt-2">Information Desk</p>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">11. Governing Law and Jurisdiction</h2>
             <p className="leading-relaxed">
-              THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
+              This Service and its Terms are governed by the laws of India. Any disputes arising from its use shall fall under the exclusive jurisdiction of the courts of New Delhi.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">9. Limitation of Liability</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">12. Modifications to Terms</h2>
             <p className="leading-relaxed">
-              To the maximum extent permitted by law, Srinagar Airport and its service providers shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the Service.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">10. Indemnification</h2>
-            <p className="leading-relaxed">
-              You agree to indemnify, defend, and hold harmless Srinagar Airport and its service providers from any claims, damages, losses, liabilities, and expenses (including legal fees) arising out of your use of the Service or violation of these Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">11. Modifications to Terms</h2>
-            <p className="leading-relaxed">
-              We reserve the right to modify these Terms at any time. Your continued use of the Service after any such modifications constitutes your acceptance of the modified Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">12. Termination</h2>
-            <p className="leading-relaxed">
-              We may terminate or suspend your access to the Service immediately, without prior notice, for any breach of these Terms or for any other reason we deem necessary.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">13. Governing Law</h2>
-            <p className="leading-relaxed">
-              These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">14. Contact Information</h2>
-            <p className="leading-relaxed">
-              If you have any questions about these Terms, please contact us through the airport information desk or visit our website.
+              We reserve the right to modify these Terms at any time. Your continued use of the Service after any such modifications constitutes your acceptance of the modified Terms. It is your responsibility to review these Terms periodically for any updates.
             </p>
           </section>
         </div>

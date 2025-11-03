@@ -9,18 +9,46 @@ const Page = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [otp, setOtp] = useState<string[]>(Array(6).fill(''));
   const [otpMessage, setOtpMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const otpInputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  
-  const handleSubmit = (e: React.FormEvent) => {
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate OTP sending
-    setOtpSent(true);
-    setOtpMessage(`OTP has been sent to ${mobileNumber}. Please enter the 6-digit code.`);
-    // Focus first OTP input
-    setTimeout(() => {
-      otpInputRefs.current[0]?.focus();
-    }, 100);
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/send-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          mobileNumber: mobileNumber,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setOtpSent(true);
+        setOtpMessage(`OTP has been sent to ${mobileNumber}. Please enter the 6-digit code.`);
+        // Focus first OTP input
+        setTimeout(() => {
+          otpInputRefs.current[0]?.focus();
+        }, 100);
+      } else {
+        setError(data.message || 'Failed to send OTP. Please try again.');
+      }
+    } catch (error: any) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleOtpChange = (index: number, value: string) => {
@@ -64,20 +92,62 @@ const Page = () => {
     }
   };
 
-  const handleOtpSubmit = (e: React.FormEvent) => {
+  const handleOtpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const otpString = otp.join('');
     
-    if (otpString.length === 6) {
-      // Success - log to console
-      console.log('OTP Verification Success!', {
-        mobileNumber,
-        otp: otpString,
-        timestamp: new Date().toISOString()
+    if (otpString.length !== 6) {
+      setError('Please enter a complete 6-digit OTP.');
+      return;
+    }
+
+    setError('');
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/verify-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          mobileNumber: mobileNumber,
+          otp: otpString,
+        }),
       });
-      
-      // You can add navigation or success message here
-      alert('OTP verified successfully!');
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Success - log to console
+        console.log('OTP Verification Success!', {
+          mobileNumber,
+          otp: otpString,
+          timestamp: new Date().toISOString()
+        });
+        
+        // Show success message
+        setSuccess('OTP verified successfully! You are now connected to the WiFi.');
+        setError('');
+        
+        // Clear OTP inputs on success
+        setOtp(Array(6).fill(''));
+        
+        // Here you can add navigation to success page or redirect
+        // router.push('/success');
+      } else {
+        setError(data.message || 'Invalid OTP. Please try again.');
+        setSuccess('');
+        // Clear OTP inputs on error
+        setOtp(Array(6).fill(''));
+        setTimeout(() => {
+          otpInputRefs.current[0]?.focus();
+        }, 100);
+      }
+    } catch (error: any) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -143,6 +213,15 @@ const Page = () => {
             </div>
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <div className="py-2 px-3 bg-red-50 border border-red-200 rounded-lg">
+              <p className="text-xs text-red-800">
+                ⚠ {error}
+              </p>
+            </div>
+          )}
+
           {/* OTP Boxes - Right below mobile input */}
           {otpSent && (
             <>
@@ -175,10 +254,20 @@ const Page = () => {
                       className="w-10 h-12 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
                       pattern="[0-9]"
                       required
+                      disabled={!!success}
                     />
                   ))}
                 </div>
               </div>
+
+              {/* Success Message below OTP boxes */}
+              {success && (
+                <div className="py-2 px-3 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-xs text-green-800 font-medium">
+                    ✓ {success}
+                  </p>
+                </div>
+              )}
             </>
           )}
 
@@ -226,10 +315,10 @@ const Page = () => {
           {!otpSent ? (
             <button
               type="submit"
-              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-bold text-base uppercase tracking-wide rounded-lg py-2.5 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
-              disabled={mobileNumber.length !== 10}
+              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-bold text-base uppercase tracking-wide rounded-lg py-2.5 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:opacity-50"
+              disabled={mobileNumber.length !== 10 || loading}
             >
-              GET OTP
+              {loading ? 'Sending...' : 'GET OTP'}
             </button>
           ) : (
             <div className="flex gap-2">
@@ -239,18 +328,21 @@ const Page = () => {
                   setOtpSent(false);
                   setOtp(Array(6).fill(''));
                   setOtpMessage('');
+                  setSuccess('');
+                  setError('');
                 }}
                 className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold text-sm rounded-lg py-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                disabled={loading}
               >
                 Change Mobile
               </button>
               <button
                 type="button"
                 onClick={handleOtpSubmit}
-                className="flex-1 bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-bold text-sm uppercase rounded-lg py-2 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400"
-                disabled={otp.join('').length !== 6}
+                className="flex-1 bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-bold text-sm uppercase rounded-lg py-2 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-orange-300 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-400 disabled:opacity-50"
+                disabled={otp.join('').length !== 6 || loading || !!success}
               >
-                Verify
+                {loading ? 'Verifying...' : success ? 'Verified' : 'Verify'}
               </button>
             </div>
           )}
